@@ -9,18 +9,16 @@ The recommended usage for this repository is to fetch it via CMake:
 ```cmake
 include(FetchContent)
 
-macro(FetchCMakeUtilities)
-    FetchContent_Declare(
-        cmake_utility
-        GIT_REPOSITORY https://github.com/Hoshiningen/cmake_utility
-    )
+FetchContent_Declare(
+    cmake_utility
+    GIT_REPOSITORY https://github.com/Hoshiningen/cmake_utility
+)
 
-    FetchContent_GetProperties(cmake_utility)
+FetchContent_GetProperties(cmake_utility)
 
-    if (NOT cmake_utility_POPULATED)
-        FetchContent_Populate(cmake_utility)
-    endif()
-endmacro()
+if (NOT cmake_utility_POPULATED)
+    FetchContent_Populate(cmake_utility)
+endif()
 ```
 
 Then include the specific files you're interested in:
